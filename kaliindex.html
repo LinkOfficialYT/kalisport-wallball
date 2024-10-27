@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection automatique</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="compte-a-rebours">Vous allez être redirigé dans 5 secondes...</h1>
+
+    <script>
+        let compte = 5;
+        const element = document.getElementById('compte-a-rebours');
+
+        const interval = setInterval(() => {
+            compte--;
+            element.textContent = `Vous allez être redirigé dans ${compte} seconde${compte !== 1 ? 's' : ''}...`;
+
+            if (compte === 0) {
+                clearInterval(interval);
+                window.location.href = "https://beaujeuwallballclub.kalisport.com/"; // Remplacez par l'URL de votre choix
+            }
+        }, 1000);
+    </script>
+    <h3>Page cree par Tiago Meira</h3>
+</body>
+</html>
